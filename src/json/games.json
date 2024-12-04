@@ -1,0 +1,52 @@
+[
+    {
+      "id_game": 1,
+      "name_game": "Pool",
+      "price_game": 500,
+      "time_game": "00:30:00",
+      "nb_people_min_game": 2,
+      "nb_people_max_game": 4,
+      "state_game": "Available",
+      "image": "/image/pool.jpg"
+    },
+    {
+      "id_game": 2,
+      "name_game": "Darts",
+      "price_game": 300,
+      "time_game": "00:15:00",
+      "nb_people_min_game": 2,
+      "nb_people_max_game": 8,
+      "state_game": "Available",
+      "image": "/image/darts.jpg"
+    },
+    {
+      "id_game": 3,
+      "name_game": "Foosball",
+      "price_game": 400,
+      "time_game": "00:20:00",
+      "nb_people_min_game": 2,
+      "nb_people_max_game": 4,
+      "state_game": "Available",
+      "image": "/image/foosball.jpg"
+    },
+    {
+      "id_game": 4,
+      "name_game": "Poker",
+      "price_game": 600,
+      "time_game": "01:00:00",
+      "nb_people_min_game": 4,
+      "nb_people_max_game": 10,
+      "state_game": "Available",
+      "image": "/image/poker.jpg"
+    },
+    {
+      "id_game": 5,
+      "name_game": "Chess",
+      "price_game": 100,
+      "time_game": "01:00:00",
+      "nb_people_min_game": 2,
+      "nb_people_max_game": 2,
+      "state_game": "Available",
+      "image": "/image/chess.jpg"
+    }
+  ]

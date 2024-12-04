@@ -1,0 +1,69 @@
+[
+    {
+      "id_bar": 1,
+      "name": "The Financier",
+      "description": "Discover the warm atmosphere and unique cocktails of the Financier bar. An ideal place to relax and socialise.",
+      "fool_description": "Nestled in the 5th arrondissement of Paris, Le Financier is a go-to destination for those who love lively and festive nights out. This spacious bar is perfect for groups of friends looking to dance and have fun until late into the night. <br><br>Le Financier is particularly renowned for its expansive dance floor, where resident DJs keep the party alive with an eclectic mix of music. For those who need a break from dancing, a large smoking area provides a comfortable retreat, and a few seating tables are available for enjoying drinks and conversations. \n\nAdditionally, the bar offers a pool table, adding a fun and competitive twist to the overall experience. Whether you come for the music, the dancing, or simply to make unforgettable memories, Le Financier combines elegance and entertainment in an exceptional setting.",
+      "address": "15 Rue du Départ, 75014 Paris",
+      "images": ["/image/bar1.jpg", 
+                 "/image/bar1_1.jpg", 
+                 "/image/bar1_2.jpg"],
+      "image_map": "/image/map1.png",
+      "linkName": "Financier",
+      "showHours": false,
+      "hours": {
+        "monday": "17:00 - 02:00",
+        "tuesday": "17:00 - 02:00",
+        "wednesday": "17:00 - 02:00",
+        "thursday": "17:00 - 03:00",
+        "friday": "17:00 - 05:00",
+        "saturday": "14:00 - 05:00",
+        "sunday": "14:00 - 02:00"
+      }
+    },
+    {
+      "id_bar": 2,
+      "name": "The Bateau Ivre",
+      "description": "A modern bar with innovative drinks and a dynamic atmosphere. Perfect for evenings out with friends.",
+      "fool_description": "A modern bar with innovative drinks and a dynamic atmosphere. Perfect for evenings out with friends.<br><br>The Bateau Ivre is a warm and welcoming bar, spread across two levels, with a cozy basement that adds to its unique charm.<br>Designed to provide a pleasant experience for all, it is the perfect place to gather with friends, whether to relax or have fun over an original drink.<br>The atmosphere at Bateau Ivre is modern and dynamic, with tasteful decor that combines comfort and conviviality.<br><br>On the ground floor, you'll find a spacious and bright area, ideal for chatting or enjoying the many games available.<br>The basement, on the other hand, offers a more intimate and subdued setting, perfect for those seeking a quieter atmosphere, yet equally friendly.<br>Whether you're here to savor one of our creative cocktails, discover a new beer, or engage in a fun board game, every corner of this bar is designed to make you feel at home.<br><br>Bateau Ivre is more than just a bar; it's a place where friends come together, where laughter fills the air, and where moments of fun and camaraderie are shared, all in a relaxed and festive atmosphere.",
+      "address": "40 Rue Descartes, 75005 Paris",
+      "images": ["/image/bar2.jpg", 
+                 "/image/bar2_1.jpg", 
+                 "/image/bar2_2.jpg"],
+      "image_map": "/image/map2.png",
+      "linkName": "BateauIvre",
+      "showHours": false,
+      "hours": {
+        "monday": "17:00 - 02:00",
+        "tuesday": "17:00 - 02:00",
+        "wednesday": "17:00 - 02:00",
+        "thursday": "17:00 - 02:00",
+        "friday": "17:00 - 02:00",
+        "saturday": "17:00 - 02:00",
+        "sunday": "17:00 - 02:00"
+      }
+    },
+    {
+    "id_bar": 3,
+    "name": "The New Institute",
+    "description": "A chic bar with a wide selection of wines and an elegant atmosphere. The perfect place for refined evenings out.",
+    "fool_description": "Located in the 14th arrondissement of Paris, Le Nouvel Institut is the perfect spot for those seeking a modern and affordable bar with a lively yet relaxed atmosphere. <br>Known for its reasonable prices, it attracts a diverse crowd, whether for a casual outing with friends or an after-work drink. <br><br>The bar's interior is both stylish and welcoming, making it an ideal place to enjoy a drink while soaking in the dynamic ambiance. Music lovers will appreciate the curated playlist that keeps the energy alive throughout the evening. <br>Le Nouvel Institut also stands out for its activities: a foosball table is available for spirited matches, adding a playful touch to the friendly atmosphere. Whether you're here to sip on a creative cocktail, discover a new beer, or simply enjoy the music and vibrant setting, Le Nouvel Institut ensures a delightful evening in a warm and inviting environment.",
+    "address": "1 bd St Germain, 75005 Paris",
+    "images": ["/image/bar3.jpg", 
+               "/image/bar3_1.jpg", 
+               "/image/bar3_2.jpg"],
+    "image_map": "/image/map3.png",
+    "linkName": "NewInstitute",
+    "showHours": false,
+    "hours": {
+        "monday": "07:00 - 02:00",
+        "tuesday": "07:00 - 02:00",
+        "wednesday": "07:00 - 02:00",
+        "thursday": "07:00 - 02:00",
+        "friday": "07:00 - 02:00",
+        "saturday": "07:00 - 02:00",
+        "sunday": "07:00 - 02:00"
+    }
+          }
+  ]
+  

@@ -1,0 +1,38 @@
+[
+    {
+      "id_drink": 1,
+      "name_drink": "Beer",
+      "price_production_drink": 2.50,
+      "price_selling_drink": 6.50,
+      "ingredient_drink": "IPA",
+      "quantity_drink": 200,
+      "image" : "/image/beer.jpeg"
+    },
+    {
+      "id_drink": 2,
+      "name_drink": "Wine",
+      "price_production_drink": 10,
+      "price_selling_drink": 25,
+      "ingredient_drink": "Bordeaux 2015",
+      "quantity_drink": 150,
+      "image": "/image/wine.jpg"
+    },
+    {
+      "id_drink": 3,
+      "name_drink": "Whiskey",
+      "price_production_drink": 5,
+      "price_selling_drink": 15,
+      "ingredient_drink": "Jack Daniel honney",
+      "quantity_drink": 100,
+      "image" : "/image/whisky.jpg"
+    },
+    {
+      "id_drink": 4,
+      "name_drink": "Soda",
+      "price_production_drink": 2,
+      "price_selling_drink": 5,
+      "ingredient_drink": "Coca-Cola light",
+      "quantity_drink": 300,
+      "image" : "/image/soda.jpg"
+    }
+  ]

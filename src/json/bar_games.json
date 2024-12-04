@@ -1,0 +1,12 @@
+[
+    { "bar_id": 1, "game_id": 1 },
+    { "bar_id": 1, "game_id": 2 },
+    { "bar_id": 1, "game_id": 3 },
+    { "bar_id": 1, "game_id": 5 },
+    { "bar_id": 2, "game_id": 1 },
+    { "bar_id": 2, "game_id": 4 },
+    { "bar_id": 2, "game_id": 5 },
+    { "bar_id": 3, "game_id": 2 },
+    { "bar_id": 3, "game_id": 3 },
+    { "bar_id": 3, "game_id": 4 }
+  ]

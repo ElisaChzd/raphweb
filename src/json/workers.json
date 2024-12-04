@@ -1,0 +1,102 @@
+[
+  {
+    "id_employee": 1,
+    "name_employee": "Tonio de Bauche",
+    "age_employee": 20,
+    "gender_employee": "Male",
+    "post_employee": "Bartender",
+    "salary_employee": 2500,
+    "id_bar": 1,
+    "photo_employee": "/image/tonio.jpg"
+  },
+  {
+    "id_employee": 1,
+    "name_employee": "Tonio de Bauche",
+    "age_employee": 20,
+    "gender_employee": "Male",
+    "post_employee": "Bartender",
+    "salary_employee": 2500,
+    "id_bar": 1,
+    "photo_employee": "/image/tonio.jpg"
+  },
+  {
+    "id_employee": 3,
+    "name_employee": "Bob Johnson",
+    "age_employee": 35,
+    "gender_employee": "Male",
+    "post_employee": "Manager",
+    "salary_employee": 3000,
+    "id_bar": 1,
+    "photo_employee": "/image/workers/bob_johnson.jpg"
+  },
+  {
+    "id_employee": 4,
+    "name_employee": "Alice Brown",
+    "age_employee": 25,
+    "gender_employee": "Female",
+    "post_employee": "Bartender",
+    "salary_employee": 2400,
+    "id_bar": 2,
+    "photo_employee": "/image/workers/alice_brown.jpg"
+  },
+  {
+    "id_employee": 5,
+    "name_employee": "Charlie Davis",
+    "age_employee": 40,
+    "gender_employee": "Male",
+    "post_employee": "Security",
+    "salary_employee": 2800,
+    "id_bar": 2,
+    "photo_employee": "/image/workers/charlie_davis.jpg"
+  },
+  {
+    "id_employee": 6,
+    "name_employee": "Eve Martinez",
+    "age_employee": 32,
+    "gender_employee": "Female",
+    "post_employee": "Waitress",
+    "salary_employee": 2100,
+    "id_bar": 2,
+    "photo_employee": "/image/workers/eve_martinez.jpg"
+  },
+  {
+    "id_employee": 7,
+    "name_employee": "George Wilson",
+    "age_employee": 38,
+    "gender_employee": "Male",
+    "post_employee": "Manager",
+    "salary_employee": 3200,
+    "id_bar": 3,
+    "photo_employee": "/image/workers/george_wilson.jpg"
+  },
+  {
+    "id_employee": 8,
+    "name_employee": "Helen Clark",
+    "age_employee": 27,
+    "gender_employee": "Female",
+    "post_employee": "Waitress",
+    "salary_employee": 2200,
+    "id_bar": 3,
+    "photo_employee": "/image/workers/helen_clark.jpg"
+  },
+  {
+    "id_employee": 9,
+    "name_employee": "Tom White",
+    "age_employee": 45,
+    "gender_employee": "Male",
+    "post_employee": "Security",
+    "salary_employee": 2700,
+    "id_bar": 3,
+    "photo_employee": "/image/workers/tom_white.jpg"
+  },
+  {
+    "id_employee": 10,
+    "name_employee": "Anna Black",
+    "age_employee": 31,
+    "gender_employee": "Female",
+    "post_employee": "Bartender",
+    "salary_employee": 2500,
+    "id_bar": 3,
+    "photo_employee": "/image/workers/anna_black.jpg"
+  }
+]
