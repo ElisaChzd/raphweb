@@ -238,7 +238,7 @@ export default {
     this.loadAllGames();
     //this.loadBarWorkers();
     //this.loadAllWorkers();
-    this.loadBarWorkers(bar.id_bar);
+    this.loadBarWorkers(2);//static...--------------------------------
   },
   computed: {
     filteredWorkers() {
@@ -316,14 +316,14 @@ export default {
         console.error("Erreur lors du chargement des employés pour le bar :", error);
     }
 },*/
-async loadBarWorkers(barId) {
+async loadBarWorkers(id_bar) {
     try {
-        alert("Try recuperate... "+barId);
+        alert("Try recuperate... "+id_bar);
         let responseEmployees = await fetch('http://localhost:3000/employees/list'); // Récupère tous les employés
         let allEmployees = await responseEmployees.json();
-        alert("recuperate... "+barId);
+        alert("recuperate... "+id_bar);
         // Filtrer les employés ayant le bon id_bar
-        this.barWorkers = allEmployees.filter(employee => employee.id_bar === barId);
+        this.barWorkers = allEmployees.filter(employee => employee.id_bar === id_bar);
     } catch (error) {
         console.error("Erreur lors du chargement des employés :", error);
     }
@@ -335,7 +335,6 @@ async loadBarWorkers(barId) {
         //this.loadAllEmployee();
         this.barWorkers= await this.loadAllEmployee()
         alert("CREATE succed");
-
       }
       catch (ex) { console.log(ex); }
   },
@@ -348,202 +347,6 @@ async loadBarWorkers(barId) {
     }
     catch (ex) { console.log(ex); }
   },
-  /*
-  editDrink(index) {
-    // Active le mode édition pour une boisson
-    this.$set(this.barDrinks[index], "editMode", true);
-  },
-
-  saveDrink(index) {
-    // Sauvegarde les modifications
-    const drink = this.barDrinks[index];
-    if (!drink.name_drink || !drink.price_drink || !drink.volume_drink) {
-      alert("Please fill in all fields!");
-      return;
-    }
-    // Désactive le mode édition
-    this.$set(this.barDrinks[index], "editMode", false);
-
-    // Sauvegarde dans le localStorage
-    const barId = parseInt(this.$route.params.id, 10);
-    localStorage.setItem(`barDrinks_${barId}`, JSON.stringify(this.barDrinks));
-
-    console.log("Drink updated:", drink);
-  },
-    
-  deleteDrink(index) {
-    // Supprime une boisson
-    const deletedDrink = this.barDrinks.splice(index, 1);
-
-    // Sauvegarde dans le localStorage
-    const barId = parseInt(this.$route.params.id, 10);
-    localStorage.setItem(`barDrinks_${barId}`, JSON.stringify(this.barDrinks));
-
-    console.log("Drink deleted:", deletedDrink);
-  },
-
-  addDrink() {
-    const barId = parseInt(this.$route.params.id, 10);
-
-    const newDrink = {
-      id_drink: Date.now(), 
-      name_drink: "",
-      price_drink: "",
-      volume_drink: "",
-      alcohol_content_drink: "", // Par exemple, pourcentage d'alcool
-      state_drink: "Available", // Par défaut
-      image: "default_image_url", // Remplacez par une URL par défaut
-      editMode: true // Active le mode édition pour remplir les champs
-    };
-
-    // Ajouter la boisson à la liste actuelle
-    this.barDrinks.push(newDrink);
-
-    // Sauvegarder dans le localStorage
-    localStorage.setItem(`barDrinks_${barId}`, JSON.stringify(this.barDrinks));
-
-    console.log("New drink added:", newDrink);
-  },*/
-  /*
-  loadBarGames() {
-    const barId = parseInt(this.$route.params.id, 10);
-
-    // Vérifie si une version sauvegardée existe dans le localStorage
-    const savedBarGames = localStorage.getItem(`barGames_${barId}`);
-    if (savedBarGames) {
-      this.barGames = JSON.parse(savedBarGames);
-    } else {
-      // Charge les données par défaut depuis gamesData et barGamesData
-      this.barGames = gamesData.filter(game =>
-        barGamesData.some(barGame => barGame.bar_id === barId && barGame.game_id === game.id_game)
-      );
-    }
-  },
-
-  editGame(index) {
-    // Active le mode édition pour un jeu
-    this.$set(this.barGames[index], "editMode", true);
-  },
-
-  saveGame(index) {
-    // Sauvegarde les modifications
-    const game = this.barGames[index];
-    if (!game.name_game || !game.price_game || !game.time_game) {
-      alert("Please fill in all fields!");
-      return;
-    }
-    // Désactive le mode édition
-    this.$set(this.barGames[index], "editMode", false);
-
-    // Sauvegarde dans le localStorage
-    const barId = parseInt(this.$route.params.id, 10);
-    localStorage.setItem(`barGames_${barId}`, JSON.stringify(this.barGames));
-
-    console.log("Game updated:", game);
-  },
-
-  deleteGame(index) {
-    // Supprime un jeu
-    const deletedGame = this.barGames.splice(index, 1);
-
-    // Sauvegarde dans le localStorage
-    const barId = parseInt(this.$route.params.id, 10);
-    localStorage.setItem(`barGames_${barId}`, JSON.stringify(this.barGames));
-
-    console.log("Game deleted:", deletedGame);
-  },
-
-  addGame() {
-    const barId = parseInt(this.$route.params.id, 10);
-
-    
-    const newGame = {
-      id_game: Date.now(), 
-      name_game: "",
-      price_game: "",
-      time_game: "",
-      nb_people_min_game: "",
-      nb_people_max_game: "",
-      state_game: "Available", // Par défaut
-      image: "default_image_url", 
-      editMode: true // Active le mode édition pour remplir les champs
-    };
-
-    // Ajouter le jeu à la liste actuelle
-    this.barGames.push(newGame);
-
-    // Sauvegarder dans le localStorage
-    localStorage.setItem(`barGames_${barId}`, JSON.stringify(this.barGames));
-
-    console.log("New game added:", newGame);
-  },*/
-
-
-
-  /*
-  loadBarWorkers() {
-    const barId = parseInt(this.$route.params.id, 10);
-
-    // Vérifie si une version sauvegardée dans localStorage existe
-    const savedWorkers = localStorage.getItem(`workers_${barId}`);
-    if (savedWorkers) {
-      this.barWorkers = JSON.parse(savedWorkers);
-    } else {
-      this.barWorkers = workersData.filter(worker => worker.id_bar === barId);
-    }
-  },
-
-  deleteWorker(index) {
-    const workerToDelete = this.barWorkers[index];
-    this.barWorkers.splice(index, 1);
-
-    // Sauvegarde dans le localStorage après suppression
-    const barId = parseInt(this.$route.params.id, 10);
-    localStorage.setItem(`workers_${barId}`, JSON.stringify(this.barWorkers));
-
-    console.log("Worker deleted:", workerToDelete);
-  },
-
-  editWorker(index) {
-    this.$set(this.barWorkers[index], "editMode", true);
-  },
-
-  saveWorker(index) {
-    const worker = this.barWorkers[index];
-    if (!worker.name_employee || !worker.post_employee || !worker.age_employee) {
-      alert("Please fill in all fields!");
-      return;
-    }
-    this.$set(this.barWorkers[index], "editMode", false);
-
-    // Sauvegarde dans le localStorage après modification
-    const barId = parseInt(this.$route.params.id, 10);
-    localStorage.setItem(`workers_${barId}`, JSON.stringify(this.barWorkers));
-
-    console.log("Worker updated:", worker);
-  },
-
-  addWorker() {
-      const barId = parseInt(this.$route.params.id, 10);
-
-      // Exemple d'un nouveau travailleur par défaut
-      const newWorker = {
-        id_employee: Date.now(), // Utilise un timestamp pour générer un ID unique
-        name_employee: "",
-        post_employee: "",
-        age_employee: "",
-        photo_employee: "", // Par défaut, pas d'image
-        editMode: true, // Active le mode édition pour remplir les champs
-      };
-
-      // Ajouter le travailleur à la liste actuelle
-      this.filteredWorkers.push(newWorker);
-
-      // Sauvegarder dans localStorage
-      localStorage.setItem(`workers_${barId}`, JSON.stringify(this.filteredWorkers));
-
-      console.log("New worker added:", newWorker);
-    },*/
 }
 };
 </script>
