@@ -61,8 +61,6 @@ async function gameCreateAction(req, res) {
             nb_people_min_game,
             nb_people_max_game,
             state_game,
-            game_isdeluxe = 0,
-            game_realprice = null,
         } = req.body;
 
         // Validation simple
@@ -79,8 +77,6 @@ async function gameCreateAction(req, res) {
             nb_people_min_game,
             nb_people_max_game,
             state_game,
-            game_isdeluxe,
-            game_realprice,
         });
 
         res.status(201).send(`Jeu créé avec succès avec l'ID : ${newGameId}`);

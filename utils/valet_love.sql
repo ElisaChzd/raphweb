@@ -48,9 +48,7 @@ CREATE TABLE Games (
     time_game TIME,
     nb_people_min_game INT, -- Correction de la faute de frappe
     nb_people_max_game INT, -- Correction de la faute de frappe
-    state_game VARCHAR(30),
-    game_isdeluxe TINYINT DEFAULT 0,
-    game_realprice INT DEFAULT NULL
+    state_game VARCHAR(30)
 );
 
 -- Table des employés

@@ -168,14 +168,13 @@
       <section v-if="currentSection === 'workers'">
         <button @click="currentSection = 'home'" class="back-button">← Back to Home</button>
         <h2 class="centered-title">Our Workers</h2>
-        <button @click="addWorker" class="add-button">+ Add a worker</button>
+        <button @click="addEmployee" class="add-button">+ Add an Employee</button>
         <table class="worker-table" v-if="filteredWorkers.length > 0">
           <thead>
             <tr>
               <th>Name</th>
               <th>Post</th>
               <th>Age</th>
-              <th>Picture</th>
               <th>Update</th>
               <th>Delete</th>
             </tr>
@@ -193,10 +192,6 @@
               <td v-if="!worker.editMode">{{ worker.age_employee }}</td>
               <td v-else>
                 <input type="number" v-model="worker.age_employee" placeholder="Enter age">
-              </td>
-              <td>
-                <img :src="worker.photo_employee" :alt="worker.name_employee" class="workers-image" v-if="!worker.editMode">
-                <input type="text" v-model="worker.photo_employee" placeholder="Enter image URL" v-else>
               </td>
               <td>
                 <button v-if="!worker.editMode" @click="editWorker(index)">Update</button>
@@ -241,7 +236,8 @@ export default {
     this.loadBarDrinks();
     //this.loadBarGames();
     this.loadAllGames();
-    this.loadBarWorkers();
+    //this.loadBarWorkers();
+    this.loadAllWorkers();
   },
   computed: {
     filteredWorkers() {
@@ -262,7 +258,56 @@ export default {
       barDrinksData.some(barDrink => barDrink.bar_id === barId && barDrink.drink_id === drink.id_drink)
     );
   },
+    
+  toggleHours() {
+    this.showHours = !this.showHours;
+  },
 
+  //----------------------------------------GAMES----------------------------------------------------
+  async loadAllGames() {
+    try {
+        let responseGames = await fetch('http://localhost:3000/games/list'); // Appel API pour récupérer tous les jeux
+        this.barGames = await responseGames.json(); 
+    } catch (error) {
+        console.error("Erreur lors du chargement des jeux :", error);
+      }
+  },
+  async addGame(){
+    try {
+        alert("CREATE... ");
+        let response = await this.$http.get("http://localhost:3000/games/create");
+        this.loadAllGames();
+      }
+      catch (ex) { console.log(ex); }
+  },
+  async sendDeleteRequest(GameId) {
+      try {
+        alert("DELETING... " + GameId);
+        let response = await this.$http.get("http://localhost:3000/games/remove/" + GameId);
+        alert("DELETED: " + response.data.rowsDeleted);
+        this.loadAllGames();
+      }
+      catch (ex) { console.log(ex); }
+    },
+
+  //---------------------------------------WORKERS-------------------------------------------------------
+  async loadAllWorkers() {
+    try {
+        let responseEmployees = await fetch('http://localhost:3000/employees/list'); // Appel API pour récupérer tous les jeux
+        this.barWorkers = await responseEmployees.json(); 
+    } catch (error) {
+        console.error("Erreur lors du chargement des employées :", error);
+      }
+  },
+  async addEmployee(){
+    try {
+        alert("CREATE... ");
+        let response = await this.$http.get("http://localhost:3000/employees/create");
+        this.loadAllEmployee();
+      }
+      catch (ex) { console.log(ex); }
+  },
+  /*
   editDrink(index) {
     // Active le mode édition pour une boisson
     this.$set(this.barDrinks[index], "editMode", true);
@@ -284,7 +329,7 @@ export default {
 
     console.log("Drink updated:", drink);
   },
-
+    
   deleteDrink(index) {
     // Supprime une boisson
     const deletedDrink = this.barDrinks.splice(index, 1);
@@ -317,38 +362,7 @@ export default {
     localStorage.setItem(`barDrinks_${barId}`, JSON.stringify(this.barDrinks));
 
     console.log("New drink added:", newDrink);
-  },
-  
-  toggleHours() {
-    this.showHours = !this.showHours;
-  },
-
-  
-  async loadAllGames() {
-    try {
-        let responseGames = await fetch('http://localhost:3000/games/list'); // Appel API pour récupérer tous les jeux
-        this.barGames = await responseGames.json(); 
-    } catch (error) {
-        console.error("Erreur lors du chargement des jeux :", error);
-      }
-  },
-  async addGame(){
-    try {
-        alert("CREATE... ");
-        let response = await this.$http.get("http://localhost:3000/games/create");
-        this.loadAllGames();
-      }
-      catch (ex) { console.log(ex); }
-  },
-  async sendDeleteRequest(GameId) {
-      try {
-        alert("DELETING... " + GameId);
-        let response = await this.$http.get("http://localhost:3000/games/remove/" + GameId);
-        alert("DELETED: " + response.data.rowsDeleted);
-        this.loadAllGames();
-      }
-      catch (ex) { console.log(ex); }
-    },
+  },*/
   /*
   loadBarGames() {
     const barId = parseInt(this.$route.params.id, 10);

@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const gamesRouter = require('./controllers/gamesapi.route.js');  // Chemin vers votre fichier routes
+const employeesRouter = require('./controllers/employeesapi.route.js');  // Chemin vers votre fichier routes
 const cors = require('cors');
 app.use(cors());
 
@@ -9,6 +10,7 @@ app.use(express.json());
 
 // Utilisation des routes
 app.use('/games', gamesRouter);
+app.use('/employees', employeesRouter);
 
 // Définir une route GET sur la racine "/"
 app.get('/toto', (req, res) => {

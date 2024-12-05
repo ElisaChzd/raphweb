@@ -4,7 +4,7 @@ module.exports = {
     // Récupère tous les jeux
     async getAllGames() {
         try {
-            const sql = "SELECT * FROM games";
+            const sql = "SELECT * FROM Games";
             console.log("[GAMES] Exécution de la requête SQL pour récupérer tous les jeux...");
 
             // Tester la connexion au pool avant d'exécuter la requête
@@ -48,8 +48,8 @@ module.exports = {
                 INSERT INTO Games (
                     name_game, price_game, time_game,
                     nb_people_min_game, nb_people_max_game,
-                    state_game, game_isdeluxe, game_realprice
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+                    state_game, 
+                ) VALUES (?, ?, ?, ?, ?, ?)`;
 
             const {
                 name_game,
@@ -58,8 +58,6 @@ module.exports = {
                 nb_people_min_game,
                 nb_people_max_game,
                 state_game,
-                game_isdeluxe,
-                game_realprice,
             } = gameData;
 
             const [result] = await pool.query(sql, [
@@ -69,8 +67,6 @@ module.exports = {
                 nb_people_min_game,
                 nb_people_max_game,
                 state_game,
-                game_isdeluxe,
-                game_realprice,
             ]);
 
             return result.insertId; // Retourne l'ID du jeu nouvellement créé

@@ -1,11 +1,11 @@
 const pool = require(__dirname + "\\db.include.js");
 
 module.exports = {
-    // Récupère tous les jeux
+    // Récupère tous les employee
     async getAllEmployees() {
         try {
-            const sql = "SELECT * FROM Employees";
-            console.log("[EMPLOYEE] Exécution de la requête SQL pour récupérer tous les jeux...");
+            const sql = "SELECT * FROM Employee";
+            console.log("[EMPLOYEE] Exécution de la requête SQL pour récupérer tous les employee...");
 
             // Tester la connexion au pool avant d'exécuter la requête
             console.log("[DB] Vérification de la connexion au pool MySQL...");
@@ -17,26 +17,26 @@ module.exports = {
 
             // Vérifier les résultats
             if (!rows || rows.length === 0) {
-                console.warn("[EMPLOYEE] Aucun jeu trouvé dans la base de données.");
+                console.warn("[EMPLOYEE] Aucun employee trouvé dans la base de données.");
                 return [];
             }
 
-            console.log(`[EMPLOYEE] ${rows.length} jeux récupérés.`);
+            console.log(`[EMPLOYEE] ${rows.length} employee récupérés.`);
             return rows;
         } catch (err) {
-            console.error("[EMPLOYEE] Erreur lors de la récupération de tous les jeux :", err.message);
-            throw new Error("Erreur lors de la récupération de tous les jeux.");
+            console.error("[EMPLOYEE] Erreur lors de la récupération de tous les employees :", err.message);
+            throw new Error("Erreur lors de la récupération de tous les employees.");
         }
     },
     async deleteEmployee(employeeId) {
         try {
             const sql = 'DELETE FROM Employee WHERE id_employee = ?';
-            console.log("[EMPLOYEE] Exécution de la requête SQL pour supprimer un jeu");
+            console.log("[EMPLOYEE] Exécution de la requête SQL pour supprimer un employee");
 
             const [result] = await pool.query(sql, [employeeId]); 
             return result.affectedRows;  
         } catch (err) {
-            console.error('[DB] Erreur lors de la suppression du jeu :', err.message);
+            console.error('[DB] Erreur lors de la suppression de lemployee :', err.message);
             throw err;
         }
     },
@@ -59,7 +59,7 @@ module.exports = {
                 post_employee,
                 salary_employee,
                 id_bar,
-            } = gameData;
+            } = employeeData;
 
             const [result] = await pool.query(sql, [
                 id_employee,
