@@ -112,8 +112,13 @@ INSERT INTO Games (id_game, name_game, price_game, time_game, nb_people_min_game
 -- Insertion des employés
 INSERT INTO Employee (name_employee, age_employee, gender_employee, post_employee, salary_employee, id_bar) VALUES
 ('John Doe', 30, 'Male', 'Bartender', 2500, 1),
+('Bob Johnson', 35, 'Male', 'Manager', 3000, 1),
 ('Jane Smith', 28, 'Female', 'Waitress', 2200, 1),
-('Bob Johnson', 35, 'Male', 'Manager', 3000, 1);
+('Alice Brown', 27, 'Female', 'Bartender', 2400, 2),
+('Evelyn White', 29, 'Female', 'Manager', 3200, 2),
+('Diana Black', 26, 'Female', 'Hostess', 2000, 2),
+('Charlie Davis', 32, 'Male', 'Waiter', 2100, 3),
+('George Harris', 33, 'Male', 'Chef', 2800, 3);
 
 -- Associer les bars aux boissons
 INSERT INTO Bar_Drink (id_bar, id_drink) VALUES

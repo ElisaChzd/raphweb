@@ -4,6 +4,7 @@ const employeeRepo = require('../utils/employees.repository.js');
 
 // Définition des routes
 router.get('/list', employeeListAction);
+//router.get('/list/:barID', employeeBarListAction)
 router.delete('/remove/:employeeId', employeeDeleteAction);
 router.post('/create', employeeCreateAction);  
 router.patch('/update/:employeeId', employeeUpdateAction);
@@ -30,6 +31,27 @@ async function employeeListAction(request, response) {
         response.status(500).send('Erreur lors de la récupération de la liste des employee.');
     }
 }
+/*
+// Route pour récupérer la liste des employees
+async function employeeBarListAction(request, response) {
+    try {
+        console.log("Tentative de récupération de la liste des employee du bar");
+        
+        const bar_employees = await employeeRepo.getBarEmployees(barId);  
+        console.log("Employee récupérés : ", bar_employees);
+
+        // No employee founded
+        if (!bar_employees || bar_employees.length === 0) {
+            console.log("Aucun employee trouvé dans la base de données.");
+            return response.status(404).send("Aucun employee trouvé.");
+        }
+
+        response.status(200).json(bar_employees);  // Retourne les employee en JSON
+    } catch (err) {
+        console.error("Erreur lors de la récupération de la liste des employee : ", err);
+        response.status(500).send('Erreur lors de la récupération de la liste des employee.');
+    }
+}*/
 
 // Route pour supprimer un employee
 async function employeeDeleteAction(request, response) {

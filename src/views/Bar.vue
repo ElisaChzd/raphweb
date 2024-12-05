@@ -156,7 +156,7 @@
                 <button v-else @click="saveGame(index)">Save</button>
               </td>
               <td>
-                <button @click="sendDeleteRequest(index+1)">Delete</button>
+                <button @click="sendDeleteRequestGame(index+1)">Delete</button>
               </td>
             </tr>
           </tbody>
@@ -198,7 +198,7 @@
                 <button v-else @click="saveWorker(index)">Save</button>
               </td>
               <td>
-                <button @click="deleteWorker(index)">Delete</button>
+                <button @click="sendDeleteRequestWorker(index)">Delete</button>
               </td>
             </tr>
           </tbody>
@@ -237,7 +237,8 @@ export default {
     //this.loadBarGames();
     this.loadAllGames();
     //this.loadBarWorkers();
-    this.loadAllWorkers();
+    //this.loadAllWorkers();
+    this.loadBarWorkers(bar.id_bar);
   },
   computed: {
     filteredWorkers() {
@@ -280,7 +281,7 @@ export default {
       }
       catch (ex) { console.log(ex); }
   },
-  async sendDeleteRequest(GameId) {
+  async sendDeleteRequestGame(GameId) {
       try {
         alert("DELETING... " + GameId);
         let response = await this.$http.get("http://localhost:3000/games/remove/" + GameId);
@@ -291,24 +292,61 @@ export default {
     },
 
   //---------------------------------------WORKERS-------------------------------------------------------
-  async loadAllWorkers() {
+  /*async loadAllWorkers() {
     try {
         let responseEmployees = await fetch('http://localhost:3000/employees/list'); // Appel API pour récupérer tous les jeux
         this.barWorkers = await responseEmployees.json(); 
     } catch (error) {
         console.error("Erreur lors du chargement des employées :", error);
       }
-  },
+  },*/
+  async loadAllWorkers() {
+    try {
+        let responseEmployees = await fetch('http://localhost:3000/employees/list'); // Appel API pour récupérer tous les jeux
+        this.barWorkers = await responseEmployees.json(); 
+    } catch (error) {
+        console.error("Erreur lors du chargement des employées :", error);
+    }
+},/*
+  async loadBarWorkers(barId) {
+    try {
+        let responseEmployees = await fetch(`http://localhost:3000/employees_bar/list/` + barId); // Appel API avec barId comme filtre
+        this.barWorkers = await responseEmployees.json();
+    } catch (error) {
+        console.error("Erreur lors du chargement des employés pour le bar :", error);
+    }
+},*/
+async loadBarWorkers(barId) {
+    try {
+        alert("Try recuperate... "+barId);
+        let responseEmployees = await fetch('http://localhost:3000/employees/list'); // Récupère tous les employés
+        let allEmployees = await responseEmployees.json();
+        alert("recuperate... "+barId);
+        // Filtrer les employés ayant le bon id_bar
+        this.barWorkers = allEmployees.filter(employee => employee.id_bar === barId);
+    } catch (error) {
+        console.error("Erreur lors du chargement des employés :", error);
+    }
+},
   async addEmployee(){
     try {
         //alert("CREATE... ");
-        let response = this.$http.get("http://localhost:3000/employees/create");
+        let response = await fetch("http://localhost:3000/employees/create");
         //this.loadAllEmployee();
         this.barWorkers= await this.loadAllEmployee()
         alert("CREATE succed");
 
       }
       catch (ex) { console.log(ex); }
+  },
+  async sendDeleteRequestWorker(EmployeeId) {
+    try {
+      alert("Trying DELETING the employee number : " + EmployeeId);
+      let response = this.$http.fetch("http://localhost:3000/employees/remove/" + EmployeeId);
+      alert("DELETED Employee: " + response.data.rowsDeleted);
+      this.barWorkers= await this.loadAllEmployee()
+    }
+    catch (ex) { console.log(ex); }
   },
   /*
   editDrink(index) {
