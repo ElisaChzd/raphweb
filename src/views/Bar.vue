@@ -301,9 +301,12 @@ export default {
   },
   async addEmployee(){
     try {
-        alert("CREATE... ");
-        let response = await this.$http.get("http://localhost:3000/employees/create");
-        this.loadAllEmployee();
+        //alert("CREATE... ");
+        let response = this.$http.get("http://localhost:3000/employees/create");
+        //this.loadAllEmployee();
+        this.barWorkers= await this.loadAllEmployee()
+        alert("CREATE succed");
+
       }
       catch (ex) { console.log(ex); }
   },

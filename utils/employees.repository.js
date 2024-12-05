@@ -48,7 +48,7 @@ module.exports = {
                 INSERT INTO Employee (
                     id_employee, name_employee, age_employee,
                     gender_employee, post_employee,
-                    salary_employee, id_bar,
+                    salary_employee, id_bar
                 ) VALUES (?, ?, ?, ?, ?, ?, ?)`;
 
             const {
@@ -85,7 +85,7 @@ module.exports = {
             const fields = Object.keys(updateData).map(key => `${key} = ?`).join(', ');
             const values = Object.values(updateData);
 
-            // Ajouter l'ID du jeu pour la condition WHERE
+            // Ajouter l'ID du employee pour la condition WHERE
             values.push(employeeId);
 
             const sql = `UPDATE Employee SET ${fields} WHERE id_employee = ?`;
@@ -93,7 +93,7 @@ module.exports = {
             const [result] = await pool.query(sql, values);
             return result.affectedRows; // Retourne le nombre de lignes affectées
         } catch (err) {
-            console.error('[DB] Erreur lors de la mise à jour du jeu :', err.message);
+            console.error('[DB] Erreur lors de la mise à jour du employee :', err.message);
             throw err;
         }
     },
